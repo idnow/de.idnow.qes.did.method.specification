@@ -495,6 +495,27 @@ Rotating DID Authentication Keys by the Administrator for Verifier and/or Issuer
 
 ![9  rotate-key](https://user-images.githubusercontent.com/107480753/174044970-a4c2f3d6-439a-4b6a-a0d4-090cf0604201.png)
 
+# Privacy and Security considerations
+
+## Privacy considerations
+
+The following privacy considerations should be considered for the QES DID method:
+
+* The DID document does not contain any Personally Identifiable Information (PII).
+* The Advanced Certificate, used to generate the JAdES signature, must contain a Subject with a Pseudonym representing the DID Identifier.
+* Only Verifiable Credentials can contain PII.
+
+## Security considerations
+
+The following security considerations should be considered for the QES DID method:
+
+* The Issuer VCAssert certificate's key-pair is generated and stored in an HSM at the Trust Service Provider.
+* The Issuer DIDDocAssert certificate's key-pair is generated and stored in an HSM at the Trust Service Provider.
+* The User VPAuth certificate's key-pair for eIDAS LoA High/Substantial is generated and stored in an HSM at the Trust Service Provider.
+* The User DID Authentication key-pair is generated and stored in an HSM at the Trust Service Provider.
+* The User VPAuth certificate's key-pair for eIDAS LoA Low is generated and stored in the device's secure element.
+* The DID Document can be marked with the LoA type to indicate its level of security.
+
 # DID Document Example
 
 ## Holder’s DID Document
